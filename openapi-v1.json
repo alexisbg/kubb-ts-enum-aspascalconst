@@ -1,0 +1,57 @@
+{
+  "openapi": "3.1.1",
+  "info": {
+    "title": "Test API",
+    "version": "v1"
+  },
+  "components": {
+    "schemas": {
+      "Order": {
+        "required": [
+          "id",
+          "created",
+          "email",
+          "totalAmount"
+        ],
+        "type": "object",
+        "properties": {
+          "id": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "created": {
+            "type": "string",
+            "format": "date-time"
+          },
+          "email": {
+            "maxLength": 64,
+            "minLength": 0,
+            "type": "string"
+          },
+          "country": {
+            "maxLength": 2,
+            "type": [
+              "null",
+              "string"
+            ]
+          },
+          "currency": {
+            "enum": [
+              null,
+              "EUR",
+              "USD"
+            ],
+            "type": [
+              "null",
+              "string"
+            ]
+          },
+          "totalAmount": {
+            "type": "number",
+            "format": "float"
+          }
+        }
+      }
+    }
+  }
+}
